@@ -26,12 +26,12 @@ jobs:
       #build docker image for nextjs
       - name: build docker image for nextjsapp
         run: |
-          docker compose -f devops-qr-code/docker-compose.yml build nextjs
+          docker compose -f docker-compose.yml build nextjs
        
       #build docker image for api
       - name: build docker image for api
         run: |
-          docker compose -f devops-qr-code/docker-compose.yml build next-api
+          docker compose -f docker-compose.yml build next-api
         env: 
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
