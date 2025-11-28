@@ -5,7 +5,7 @@ services:
       context: ./front-end-nextjs
       dockerfile: Dockerfile
     container_name: nextjsapp
-    image: nextjs:${IMAGE_TAG}
+    image: nextjs
     ports:
     - 3000:3000
 
@@ -14,7 +14,7 @@ services:
       context: ./api
       dockerfile: Dockerfile
     container_name: nextjs-api
-    image: next-api:${IMAGE_TAG}
+    image: next-api
     ports:
     - 8000:8000
     environment:
