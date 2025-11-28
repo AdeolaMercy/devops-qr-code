@@ -1,23 +1,23 @@
 version: '3'
 services:
-  nextjs-app:
+  nextjs:
     build:
       context: ./front-end-nextjs
       dockerfile: Dockerfile
     container_name: nextjsapp
-    image: nextjs:${IMAGE_TAG}
+    image: nextjs
     ports:
     - 3000:3000
 
-  api:
+  next-api:
     build:
       context: ./api
       dockerfile: Dockerfile
     container_name: nextjs-api
-    image: next-api:${IMAGE_TAG}
+    image: next-api
     ports:
     - 8000:8000
     environment:
-      - AWS_ACCESS_KEY: "${AWS_ACCESS_KEY}"
-      - AWS_SECRET_KEY: "${AWS_SECRET_KEY}"
-      - AWS_BUCKET_NAME: "${AWS_BUCKET_NAME}"
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
