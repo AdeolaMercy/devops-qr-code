@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nextjs-app:
+  nextjs:
     build:
       context: ./front-end-nextjs
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
     ports:
     - 3000:3000
 
-  api:
+  next-api:
     build:
       context: ./api
       dockerfile: Dockerfile
